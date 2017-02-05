@@ -24,7 +24,7 @@ class Hoge : NSObject {
     }
 
     // 通知を受けるメソッドです
-    func update(notification: NSNotification?) {
+    func update(notification: NSNotification) {
         print("receive Notification!")
     }
 }
@@ -61,11 +61,10 @@ class Hoge2 : NSObject {
     }
     
     // 通知を受けるメソッドです
-    func update(nsNotification: NSNotification?) {
+    func update(notification: NSNotification) {
         print("receive Notification!")
         
-        guard let notification = nsNotification,
-            let userInfo = notification.userInfo,
+        guard let userInfo = notification.userInfo,
             let message  = userInfo["message"] as? String,
             let date     = userInfo["date"]    as? Date else {
                 print("No userInfo found in notification")
