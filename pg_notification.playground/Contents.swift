@@ -16,16 +16,26 @@ import UIKit
 //     http://dev.classmethod.jp/smartphone/swift-3-0-notificationcenter/
 //     http://joyplot.com/documents/2016/11/01/swift-notificationcenter-app-state/
 
+public extension Notification {
+    public static let MyNotificationName = Notification.Name("Notification.MyNotification")
+    public static let MyNotificationNameUserInfo = Notification.Name("Notification.MyNotificationUserInfo")
+}
 class Hoge : NSObject {
     override init() {
         super.init()
         // 受信側(登録)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.update), name: Notification.Name(rawValue: "MyNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.update), name: Notification.MyNotificationName, object: nil)
     }
 
     // 通知を受けるメソッドです
     func update(notification: NSNotification) {
         print("receive Notification!")
+    }
+    
+    // 登録解除
+    func removeObserver() {
+        NotificationCenter.default.removeObserver(self, name: Notification.MyNotificationName, object: nil)
+
     }
 }
 
@@ -33,7 +43,6 @@ var hoge = Hoge()
 
 // 通知する
 NotificationCenter.default.post(name: Notification.Name(rawValue: "MyNotification"), object: nil)
-
 
 // ---------------------------------
 // 通知の名前ですが、複数の名前が定義されています。
@@ -45,7 +54,8 @@ NSNotification.Name("myNotification")
 // その他、NSNotification.Nameを拡張することもできます。
 //  参考
 //     Swift 3 以降の NotificationCenter の正しい使い方 - Qiita http://qiita.com/mono0926/items/754c5d2dbe431542c75e
-//  少しわかりにくいかもしれません。
+//  これが正しい使い方のようです。
+//  文字列比較をしないようにするのが今のやり方です。
 
 // ---------------------------------
 //  データの受け渡し
@@ -57,7 +67,7 @@ class Hoge2 : NSObject {
     override init() {
         super.init()
         // 受信側(登録)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.update), name: Notification.Name(rawValue: "MyNotification2"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.update), name: Notification.MyNotificationNameUserInfo, object: nil)
     }
     
     // 通知を受けるメソッドです
@@ -78,4 +88,4 @@ class Hoge2 : NSObject {
 var hoge2 = Hoge2()
 
 // 通知する
-NotificationCenter.default.post(name: Notification.Name(rawValue: "MyNotification2"), object: nil, userInfo:["message":"Hello there!", "date":Date()])
+NotificationCenter.default.post(name: Notification.MyNotificationNameUserInfo, object: nil, userInfo:["message":"Hello there!", "date":Date()])

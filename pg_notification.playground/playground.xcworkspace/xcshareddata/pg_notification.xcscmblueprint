@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FF180ECE270D367223BD6D7F4E029E33BEE0A394",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "856583B533436658D2335181DE67CC8DA3936CE9" : 9223372036854775807,
+    "FF180ECE270D367223BD6D7F4E029E33BEE0A394" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "140B7097-AC0F-428B-923F-62ACE4899A26",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "856583B533436658D2335181DE67CC8DA3936CE9" : "..",
+    "FF180ECE270D367223BD6D7F4E029E33BEE0A394" : "swift-notification\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "pg_notification",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "pg_notification.playground",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/unokun\/iOS-LessonMemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "856583B533436658D2335181DE67CC8DA3936CE9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/unokun\/swift-notification.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FF180ECE270D367223BD6D7F4E029E33BEE0A394"
+    }
+  ]
+}
